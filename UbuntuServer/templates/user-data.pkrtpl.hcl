@@ -13,7 +13,7 @@ autoinstall:
         ethernets:
             ${interface}:
                 dhcp4: true
-                dhcp-identifier: mac
+                #dhcp-identifier: mac
     ssh:
         install-server: yes
         allow-pw: yes
