@@ -12,10 +12,14 @@ server_build_type = "gui"
 
 # Autounattend
 
-# Add custom autounattend.xml to release specific folder and uncomment line below
+# Add custom autounattend.xml.pkrtpl.hcl to release specific folder if required and uncomment line below
 #autounattend_version = "2019"
 
 # VM
 
 virtualbox_guest_os_type = "Windows2019_64"
 vm_name                  = "Windows-Server-2019"
+
+# Windows
+# (15 character limit)
+hostname            = "WIN-SERVER-2019"

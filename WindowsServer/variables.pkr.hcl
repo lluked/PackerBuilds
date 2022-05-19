@@ -6,7 +6,6 @@ variable "autounattend_version" {
 variable "boot_wait" {
   type    = string
   default = "5s"
-
 }
 
 variable "disk_size" {
@@ -17,6 +16,11 @@ variable "disk_size" {
 variable "headless" {
   type = bool
   default = true
+}
+
+variable "computer_name" {
+  type    = string
+  default = "Win-Server"
 }
 
 variable "iso_checksum" {
@@ -63,11 +67,12 @@ variable "virtualbox_guest_os_type" {
 
 variable "vm_name" {
   type    = string
+  default = "Win-Server"
 }
 
 variable "winrm_password" {
   type    = string
-  default = "packer"
+  default = "vagrant"
 }
 
 variable "winrm_username" {

@@ -2,9 +2,9 @@
 
 Packer configuration to build a basic Windows Server box with virtualbox-iso and vmware-iso builders.
 
-Credentials are defined in the answer files under `autounattend/generic/...` and `variables.pkr.hcl`, as `Administrator:packer`.
+Answer files are templated from `templates/autounattend/generic/...` for `"gui"` and `"core"`.
 
-Common answer files for `"gui"` and `"core"` installations are used across all releases, custom answer files can be added for a specific release and enabled in the variable file specific to that release.
+Specific answer files can be added for a release and enabled in the variable file for that release.
 
 Instructions:
 -   Run `packer init .` to install required packer plugins.

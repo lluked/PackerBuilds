@@ -1,10 +1,12 @@
 
 source "virtualbox-iso" "windows-server" {
   boot_wait        = "${var.boot_wait}"
+  cd_content       = {
+    "autounattend.xml" = templatefile("./templates/autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml.pkrtpl.hcl", { computer_name="${var.computer_name}", password="${var.winrm_password}" })
+  }
   cpus             = "${var.numvcpus}"
   communicator     = "winrm"
   disk_size        = "${var.disk_size}"
-  floppy_files     = ["autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml"]
   gfx_controller   = "vboxsvga"
   gfx_vram_size    = "32"
   guest_os_type    = "${var.virtualbox_guest_os_type}"
@@ -25,11 +27,13 @@ source "virtualbox-iso" "windows-server" {
 
 source "vmware-iso" "windows-server" {
   boot_wait         = "${var.boot_wait}"
+  cd_content        = {
+    "autounattend.xml" = templatefile("./templates/autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml.pkrtpl.hcl", { computer_name="${var.computer_name}", password="${var.winrm_password}" })
+  }
   communicator      = "winrm"
   cpus              = "${var.numvcpus}"
   disk_size         = "${var.disk_size}"
   disk_type_id      = "0"
-  floppy_files      = ["autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml"]
   guest_os_type     = "windows9srv-64"
   headless          = "${var.headless}"
   http_directory    = "http"
