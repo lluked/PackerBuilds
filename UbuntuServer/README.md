@@ -13,10 +13,10 @@ Separate variable files are included to build Ubuntu 20.04 and 22.04.
 Instructions:
 -   Read the notes.
 -   Run `packer init .` to install required packer plugins.
--   Run `packer build -only=virtualbox-iso.ubuntu-server -var-file="UbuntuServer20.04.pkrvars.hcl" .` for a virtualbox build of Ubuntu Server 20.04.
--   Run `packer build -only=virtualbox-iso.ubuntu-server -var-file="UbuntuServer22.04.pkrvars.hcl" .` for a virtualbox build of Ubuntu Server 22.04.
--   Run `packer build -only=vmware-iso.ubuntu-server -var-file="UbuntuServer20.04.pkrvars.hcl" .` for a vmware build of Ubuntu Server 20.04.
--   Run `packer build -only=vmware-iso.ubuntu-server -var-file="UbuntuServer22.04.pkrvars.hcl" .` for a vmware build of Ubuntu Server 22.04.
+-   Run `packer build -only=virtualbox-iso.ubuntu-server -var-file="UbuntuServer20.04.pkrvars.hcl" .` for a VirtualBox build of Ubuntu Server 20.04.
+-   Run `packer build -only=virtualbox-iso.ubuntu-server -var-file="UbuntuServer22.04.pkrvars.hcl" .` for a VirtualBox build of Ubuntu Server 22.04.
+-   Run `packer build -only=vmware-iso.ubuntu-server -var-file="UbuntuServer20.04.pkrvars.hcl" .` for a VMWare build of Ubuntu Server 20.04.
+-   Run `packer build -only=vmware-iso.ubuntu-server -var-file="UbuntuServer22.04.pkrvars.hcl" .` for a VMWare build of Ubuntu Server 22.04.
 
 Notes:
 -   Timing is important, different hosts load at different speeds, boot_wait needs changing to suit the build host. Separate variables exist for Virtualbox and VMWare.
