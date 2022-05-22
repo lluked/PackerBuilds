@@ -2,7 +2,7 @@
 source "virtualbox-iso" "windows-server" {
   boot_wait        = "${var.boot_wait}"
   cd_content       = {
-    "autounattend.xml" = templatefile("./templates/autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml.pkrtpl.hcl", { computer_name="${var.computer_name}", password="${var.winrm_password}" })
+    "autounattend.xml" = templatefile("./templates/autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml.pkrtpl.hcl", { computer_name="${var.hostname}", admin_password="${var.admin_password}" })
   }
   cpus             = "${var.numvcpus}"
   communicator     = "winrm"
@@ -19,16 +19,16 @@ source "virtualbox-iso" "windows-server" {
   shutdown_timeout = "30m"
   vm_name          = "${var.vm_name}-${var.server_build_type}"
   winrm_insecure   = true
-  winrm_password   = "${var.winrm_password}"
+  winrm_password   = "${var.admin_password}"
   winrm_timeout    = "4h"
   winrm_use_ssl    = true
-  winrm_username   = "${var.winrm_username}"
+  winrm_username   = "Administrator"
 }
 
 source "vmware-iso" "windows-server" {
   boot_wait         = "${var.boot_wait}"
   cd_content        = {
-    "autounattend.xml" = templatefile("./templates/autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml.pkrtpl.hcl", { computer_name="${var.computer_name}", password="${var.winrm_password}" })
+    "autounattend.xml" = templatefile("./templates/autounattend/${var.autounattend_version}/${var.server_build_type}/autounattend.xml.pkrtpl.hcl", { computer_name="${var.hostname}", admin_password="${var.admin_password}" })
   }
   communicator      = "winrm"
   cpus              = "${var.numvcpus}"
@@ -50,10 +50,10 @@ source "vmware-iso" "windows-server" {
     "scsi0.virtualDev"  = "lsisas1068"
   }
   winrm_insecure = true
-  winrm_password = "${var.winrm_password}"
+  winrm_password = "${var.admin_password}"
   winrm_timeout  = "4h"
   winrm_use_ssl  = true
-  winrm_username = "${var.winrm_username}"
+  winrm_username = "Administrator"
 }
 
 build {

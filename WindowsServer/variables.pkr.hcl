@@ -1,3 +1,9 @@
+
+variable "admin_password" {
+  type    = string
+  default = "packer"
+}
+
 variable "autounattend_version" {
   type    = string
   default = "generic"
@@ -18,7 +24,7 @@ variable "headless" {
   default = true
 }
 
-variable "computer_name" {
+variable "hostname" {
   type    = string
   default = "Win-Server"
 }
@@ -68,14 +74,4 @@ variable "virtualbox_guest_os_type" {
 variable "vm_name" {
   type    = string
   default = "Win-Server"
-}
-
-variable "winrm_password" {
-  type    = string
-  default = "vagrant"
-}
-
-variable "winrm_username" {
-  type    = string
-  default = "Administrator"
 }
