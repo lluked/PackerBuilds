@@ -17,7 +17,6 @@ variable "boot_wait_vmware" {
   default = "5s"
 }
 
-
 # CD
 variable "cd_label" {
   description = "CD Label"
