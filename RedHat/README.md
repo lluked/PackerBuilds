@@ -1,6 +1,6 @@
-# CentOS
+# RedHat/CentOS
 
-Packer configuration to build a basic CentOS boxes with virtualbox-iso and vmware-iso builders.
+Packer configuration to build a basic RedHat/CentOS boxes with virtualbox-iso and vmware-iso builders.
 
 relevant kickstart file is mounted for each build.
 
