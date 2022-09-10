@@ -19,7 +19,7 @@ vagrant:vagrant
 -   Run `packer build -only=roles.virtualbox-iso.redhat7 .` for a VirtualBox build of CentOS Stream 7.
 -   Run `packer build -only=roles.virtualbox-iso.redhat8 .` for a VirtualBox build of CentOS Stream 8.
 -   Run `packer build -only=roles.virtualbox-iso.redhat9 .` for a VirtualBox build of CentOS Stream 9.
--   Run `packer build -only=roles.vmware-iso.redhat8 .` for a VMWware build of CentOS Stream 7.
+-   Run `packer build -only=roles.vmware-iso.redhat7 .` for a VMWware build of CentOS Stream 7.
 -   Run `packer build -only=roles.vmware-iso.redhat8 .` for a VMWware build of CentOS Stream 8.
 -   Run `packer build -only=roles.vmware-iso.redhat9 .` for a VMWware build of CentOS Stream 9.
 -   Run `packer build -parallel-builds=1 .` to build all, one at a time.
