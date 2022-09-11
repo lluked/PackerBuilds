@@ -68,6 +68,15 @@ build {
     script          = "scripts/vagrant.sh"
   }
 
+  provisioner "shell" {
+    execute_command = "echo '${var.ssh_password}' | sudo -S env {{ .Vars }} {{ .Path }}"
+    scripts         = [
+      "scripts/vagrant.sh",
+      "scripts/virtualbox.sh",
+      "scripts/vmware.sh"
+    ]
+  }
+
   post-processor "vagrant" {
     keep_input_artifact = true
     output = "output/{{.ArtifactId}}.box"

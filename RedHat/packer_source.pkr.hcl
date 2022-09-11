@@ -11,7 +11,7 @@ source "virtualbox-iso" "default" {
   format                 = "ova"
   gfx_controller         = "vmsvga"
   gfx_vram_size          = "32"
-  guest_additions_path   = "VBoxGuestAdditions_{{ .Version }}.iso"
+  guest_additions_path   = "/tmp/VBoxGuestAdditions.iso"
   guest_os_type          = "RedHat_64"
   hard_drive_interface   = "sata"
   headless               = "${var.headless}"
